@@ -1,29 +1,26 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import { createVuetify } from 'vuetify'
-import { VApp, VNavigationDrawer, VBtn, VIcon, VAppBar, VContainer, VMain } from 'vuetify/components'
+
+// Vuetify
 import 'vuetify/styles'
+import { createVuetify } from 'vuetify'
+import * as components from 'vuetify/components'
+import * as directives from 'vuetify/directives'
 
-import router from './router' // <-- ДОДАТИ
+// Router
+import router from './router'
 
+// Створення Vuetify з автоматичною реєстрацією компонентів
 const vuetify = createVuetify({
-  components: {
-    VApp,
-    VNavigationDrawer,
-    VBtn,
-    VIcon,
-    VAppBar,
-    VContainer,
-    VMain,
-  },
+  components,
+  directives,
 })
 
+// Монтування
 createApp(App)
   .use(vuetify)
-  .use(router) // <-- ДОДАТИ
+  .use(router)
   .mount('#app')
-
-
 
 
 
